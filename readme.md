@@ -1,50 +1,20 @@
-# Exploiting Vulnerabilities in Web Applications
+# Vulnerabilities in Web Applications
 
-Web applications are prone to various types of vulnerabilities. Here we'll be giving a brief intro to some of them. For detailed information, you can refer to https://portswigger.net/web-security/all-materials.
+## What does a vulnerability mean?
+"A website vulnerability is a weakness or misconfiguration in a website or web application code that allows an attacker to gain some level of control of the site, and possibly the hosting server."
 
-## Tools required
-For exploiting vulnerabilities in web applications, we'll be requiring some tools, an important one being Burp Suite, which is a Java based Web Penetration Testing framework. It is a very powerful tool and used for professional purposes as well. You can download it from here (https://portswigger.net/burp/communitydownload). To get a basic overview of what Burp Suite is, you might like to read https://www.geeksforgeeks.org/what-is-burp-suite/ or watch https://www.youtube.com/watch?v=70hvwmwfZeM. 
+### What kind of harm does it pose?
+There are different types of vulnerabilities, targetting different functions of a web application like gaining access to the database of a website revealing personal information of users, running a script in the background to access data from your computer, or a script that transfers money from your bank account!
 
-Also, if you are using Burp Suite for the first time, do watch https://www.youtube.com/watch?v=YCCrVtvAu2I to get an idea of how the proxy (which is the main feature of burp that we'll be using extensively) works.
+### Types of Vulnerabilities
+Different kinds of attacks have different purposes and can be categorized as follows-
 
-# Types of Vulnerabilities
+* **Insecure Deserialization -** Many websites have some hidden content in them, which is only visible once you verify that you have appropriate priviledges. For example, you visit to an email website, you cannot see your emails unless you login. When you log in, the system generates an *object* that contains information on what content should be shown to you (like if you are logging in with your credentials,you can only view you emails and  not your friends'). Serialization vulnerabilities tamper with the generated *object*, to allow you to see content you are not authorised to. 
 
-## Insecure deserialization
-### What is serialization and deserialization?
-"Serialization is the process of converting complex data structures, such as objects and their fields, into a 'flatter' format that can be sent and received as a sequential stream of bytes." Let's explain this with an example.
-Suppose this is our user object,
-`$user->name = "carlos";` <br>
-`$user->isLoggedIn = true;`
+Another example where this applies is admin portal on websites. So there are many websites that have an admin portal to manage the data associated with the site. If you tamper with the *object* as described above, you can even gain admin access to a website!
 
-when this data is serialized, it looks like this `O:4:"User":2:{s:4:"name":s:6:"carlos"; s:10:"isLoggedIn":b:1;}`
-This can be interpreted as follows:
+* **SQL Injection-** A lot of websites have database in the backend. What happens is that when you go to a website that has an input field, the data you enter is sent to the server, an *SQL query* is run, and the result is returned back. But what if the input you enter is an *SQL command*? Chances are, the backend program runs your input as a query on the database and the result you receive is all of the data which is stored in the database. To get more idea about SQL Injection, see https://www.youtube.com/watch?v=_jKylhJtPmI .
 
-* O:4:"User" - An object with the 4-character class name "User"
-* 2 - the object has 2 attributes
-* s:4:"name" - The key of the first attribute is the 4-character string "name"
-* s:6:"carlos" - The value of the first attribute is the 6-character string "carlos"
-* s:10:"isLoggedIn" - The key of the second attribute is the 10-character string "isLoggedIn"
-* b:1 - The value of the second attribute is the boolean value true
+* **Cross Site Scripting (XSS)-** Cross site scripting runs unintended JavaScript code on the website. This can be used to steal valuable user data or show spam content to the user. To get more idea about XSS, see https://www.youtube.com/watch?v=L5l9lSnNMxg .
 
-Deserialization refers to reversing the serialization on the server side to get back the object that was initially created on the client side.
-
-### Why can it be harmful?
-
-##### Modifying object attributes
-Suppose the serialized object is as follows `O:4:"User":2:{s:8:"username":s:6:"carlos"; s:7:"isAdmin":b:0;}`.
-If the attacker modifies the `isAdmin` field in the serialized data and change it to `1`, he can gain access to confidential information and priviledges.
-<br>
-
-To get hands on experience with this task, you can try https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-modifying-serialized-objects lab on portswigger.
-
-##### Modifying object types
-PHP based applications are particularly vulnerable to these kind of vulnerabilities, due to presence of a loose comparison operator `==`.
-<br>
-What this means is that in PHP if we evaluate the statement `5=="5"`, it evaluates to true and so does `5 == "5 of something"`. However, if there is no number in the string's start, it is evaluated as `0`. So `0=="any string"` would evaluate `true` in PHP.
-
-So what this means is that if the attacker modifies the serialized object to contain password as an integer and set its value to `0`, he can potentially login to any acount in the system!
-
-To get a hands on experience with this task, you can try this lab https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-modifying-serialized-data-types.
-
-So this was a basic overview of attacks related to insecure deserialization. If you wish to read more, you might like to check out https://portswigger.net/web-security/deserialization.
-
+* **Cross Site Request Forgery (CSRF)-** In this kind of attack, the attacker causes the victim user to carry out an action unintentionally.  For example, this might be to change the email address on their account, to change their password, or to make a funds transfer. Depending on the nature of the action, the attacker might be able to gain full control over the user's account. To get more idea about CSRF, do watch https://www.youtube.com/watch?v=vRBihr41JTo .
