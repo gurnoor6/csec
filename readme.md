@@ -16,8 +16,5 @@ Another example where this applies is admin portal on websites. So there are man
 
 * **Cross Site Scripting (XSS)-** Cross site scripting runs unintended JavaScript code on the website. This can be used to steal valuable user data or show spam content to the user. To get more idea about XSS, see https://www.youtube.com/watch?v=L5l9lSnNMxg . [This](https://www.youtube.com/watch?v=9kaihe5m3Lk) video demonstrates XSS quite nicely.
 
-<<<<<<< HEAD
 * **Cross Site Request Forgery (CSRF)-** In this kind of attack, the attacker causes the victim user to carry out an action unintentionally.  For example, this might be to change the email address on their account, to change their password, or to make a funds transfer. Depending on the nature of the action, the attacker might be able to gain full control over the user's account. To get more idea about CSRF, do watch https://www.youtube.com/watch?v=vRBihr41JTo or https://www.youtube.com/watch?v=eWEgUcHPle0 .
-=======
-* **Cross Site Request Forgery (CSRF)-** In this kind of attack, the attacker causes the victim user to carry out an action unintentionally.  For example, this might be to change the email address on their account, to change their password, or to make a funds transfer. Depending on the nature of the action, the attacker might be able to gain full control over the user's account. To get more idea about CSRF, do watch https://www.youtube.com/watch?v=vRBihr41JTo .
->>>>>>> f87c1cae275c2927c838d0ddac192c4fe16c999f
+
