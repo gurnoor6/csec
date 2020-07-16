@@ -1,4 +1,4 @@
-#Authentication
+# Authentication
 In this section, we'll look at some of the most common authentication mechanisms used by websites and discuss potential vulnerabilities in them.
 
 ## What is authentication?
