@@ -8,6 +8,7 @@ Cross-site Request Forgery is a vulnerability that allows and attacker to induce
 ## How does CSRF work?
 For example, suppose an application has the functionality to allow users to change their email address. The corresponding HTTP request might look like:
 
+```
 POST /email/change HTTP/1.1
 Host: vulnerable-website.com
 Content-Type: application/x-www-form-urlencoded
@@ -15,6 +16,7 @@ Content-Length: 30
 Cookie: session=yvthwsztyeQkAPzeQ5gHgTvlyxHfsAfE
 
 email=wiener@normal-user.com
+```
 
 This satisfies the key conditions for CSRF:
 1. The action of changing the email address on a user's account is relevant.
@@ -23,7 +25,8 @@ This satisfies the key conditions for CSRF:
 
 The attacker can construct a webpage containing the following HTML:
 
-`<html>
+```
+<html>
   <body>
     <form action="https://vulnerable-website.com/email/change" method="POST">
       <input type="hidden" name="email" value="pwned@evil-user.net" />
@@ -32,7 +35,8 @@ The attacker can construct a webpage containing the following HTML:
       document.forms[0].submit();
     </script>
   </body>
-</html>`
+</html>
+```
 
 If a victim user visits the attacker's web page, the following will happen, firstly the attacker's page will trigger an HTTP request to the vulnerable web site.
 Now if the user is logged in to the vulnerable site, their browser will automatically include the session cookie in the request.
