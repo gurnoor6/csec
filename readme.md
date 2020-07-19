@@ -1,5 +1,9 @@
 # Vulnerabilities in Web Applications
 
+How is private information leaked from social networking sites? How can someone's bank account get compromised by just clicking on a link in an email? Why are we advised to not use the same password on different sites? What are those annoying "accept cookie banners" that pop up every time? How do characters in movies get into their school's database to change their grade? 
+
+If you've ever encountered above questions and wanted to learn how these things happen, we've got you covered. In these tutorials we will be discussing about common vulnerabilities in web applications and how can those be exploited by attackers. But these tutorials cover a lot more than that. They will help you gain a deeper understanding into how stuff works, and if you are a developer, will help you to make more robust applications! 
+
 ## What does a vulnerability mean?
 "A website vulnerability is a weakness or misconfiguration in a website or web application code that allows an attacker to gain some level of control of the site, and possibly the hosting server."
 
