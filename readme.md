@@ -20,7 +20,7 @@ Injection attacks can be prevented by validating and/or sanitizing user-submitte
 
 * **Sensitive Data Exposure-** If web applications don’t protect sensitive data such as financial information and passwords, attackers can gain access to that data and sellor utilize it for nefarious purposes. One popular method for stealing sensitive information is using a [man-in-the-middle attack](https://www.cloudflare.com/learning/security/threats/man-in-the-middle-attack/). So, the applications generally store this sensitive data in encrypted format. 
 
-* **[XML External Entities (XEE)](xee.md)-** XML external entity injection (also known as XXE) is a web security vulnerability that allows an attacker to interfere with an application's processing of XML data. It often allows an attacker to view files on the application server filesystem, and to interact with any backend or external systems that the application itself can access.
+* **[XML External Entities (XXE)](xxe.md)-** XML external entity injection (also known as XXE) is a web security vulnerability that allows an attacker to interfere with an application's processing of XML data. It often allows an attacker to view files on the application server filesystem, and to interact with any backend or external systems that the application itself can access.
 The best ways to prevent XEE attacks are to have web applications accept a less complex type of data, such as JSON, or at the very least to patch XML parsers and disable the use of external entities (An ‘external entity’ in this context refers to a storage unit, such as a hard drive.) in an XML application.
 
 
