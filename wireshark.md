@@ -10,9 +10,9 @@ The way your device catches these signals is via a Network Adapter (for example,
 # Basics of Wireshark
 If you do not have wireshark installed on your laptop, download it from [here](https://www.wireshark.org/download.html).<br>
 The video below covers the this topic pretty nicely, however there are a few things I would like to elaborate upon.
-<iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=Hl0IpoS503A">
-</iframe>
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/watch?v=Hl0IpoS503A" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
 
 <br>
 
