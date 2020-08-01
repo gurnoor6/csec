@@ -37,7 +37,7 @@ So if these keys are needed for decryption and can be captured only when a devic
 <img src="images/eapol.png">
 
 ## Deauthentication attack
-Now we enter one of the most interesting parts of the post. Have you ever had someone using your network and taking up all the bandwidth and you just want to kick them out (from the network) ? Well, this attack does exactly that. You can kick any (or all) devices connected to a router.
+Now we enter one of the most interesting parts of the post. Have you ever had someone using your network and taking up all the bandwidth and you just want to kick them out (from the network) ? Well, this attack does exactly that. You can kick any (or all) devices connected to a router.<br>
 <img src="images/deauth.jpg"><br>
 (Image Source- Google Images)
 
