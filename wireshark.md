@@ -2,6 +2,9 @@
 
 You might have heard that sensitive information like credit card details, login credentials etc. should not be entered while using public wifi network. But why is it so? Okay, so someone can access the data we enter, but is it practically feasible? If yes, how can we do it? Well, in this post we are going to discuss on how can you analyse the network traffic. 
 
+<img src="images/dns.png"><br>
+<img src="images/requests.png"><br>
+
 # Background
 Okay so let's start with some basics first. There are a lot of devices around us emitting signals, but we'll mainly focus on two of them - the routers and the devices that are used to access the internet such as a smartphone or a laptop. The communication between them follows the **IEEE 802.11** standard. But what does that even mean? So whenever some data is to be transmitted, there has to be a set of rules to which the transmission data adheres, to ensure uniformity. For example, the requests over the **world wide web** follow the `HTTP` protocol in general. In the same way, communications for WiFi networks follow the **IEEE 802.11** standard protocol.<br>
 The way your device catches these signals is via a Network Adapter. To view these signals around you, you need a network monitoring software. Although there are a lot of them, but Wireshark is a good choice and in this post we'll be using it.
@@ -31,9 +34,12 @@ So for the interesting part, that is capturing network traffic of the devices co
 ## EAPOL Handshake
 In the previous section, we talked about EAPOL handshake. So what is it and why do we need it? What happens is, when a device connects to a WiFi network, there is a key exchange between the router and the client that encrypts all of the communication thereafter. The reason it is needed is if you want to see what the traffic from that device contains or you want to crack the router's passphrase, you'll need these these keys. Formally this process is known as **4-way handshake** and **EAPOL** is the name of protocol used for exhanging the keys. You can read more about it [here](https://www.wifi-professionals.com/2019/01/4-way-handshake).<br>
 So if these keys are needed for decryption and can be captured only when a device connects to a network, isn't it tough to get them? Well, the answer is no. There is something known as a deuathentication attack.
+<img src="images/eapol.png">
 
 ## Deauthentication attack
 Now we enter one of the most interesting parts of the post. Have you ever had someone using your network and taking up all the bandwidth and you just want to kick them out (from the network) ? Well, this attack does exactly that. You can kick any (or all) devices connected to a router.
+<img src="images/deauth.jpg"><br>
+(Image Source- Google Images)
 
 ### Performing Deauthentication attack
 * Turn on the monitor mode as described above.
