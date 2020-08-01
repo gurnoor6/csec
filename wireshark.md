@@ -1,10 +1,10 @@
 # But why is a public wifi unsafe?
 
-You might have heard that sensitive information like credit card credentials, login credentials for a website etc. should not be entered while using public wifi network. But why is it so? Okay, so someone can access the data we enter, but is it practically feasible? If yes, how can we do it? Well, in this post we are going to discuss on how can you analyse the network traffic. 
+You might have heard that sensitive information like credit card credentials, login credentials etc. should not be entered while using public wifi network. But why is it so? Okay, so someone can access the data we enter, but is it practically feasible? If yes, how can we do it? Well, in this post we are going to discuss on how can you analyse the network traffic. 
 
 # Background
 Okay so let's start with some basics first. There are a lot of devices around us emitting signals, but we'll mainly focus on two of them - the routers and the devices that are used to access the internet such as a smartphone or a laptop. The communication between them follows the **IEEE 802.11** standard. But what does that even mean? So whenever some data is to be transmitted, there has to be a set of rules to which the transmission data adheres, to ensure uniformity. For example, the requests over the **world wide web** follow the `HTTP` protocol in general. In the same way, communications for WiFi networks follow the **IEEE 802.11** standard protocol.<br>
-The way your device catches these signals is via a Network Adapter (for example, your laptop might have one of Realtek or Broadcom). To view these signals around you, you need a network monitoring software. Although there are a lot of them, but Wireshark is a good choice and in this post we'll be using it.
+The way your device catches these signals is via a Network Adapter. To view these signals around you, you need a network monitoring software. Although there are a lot of them, but Wireshark is a good choice and in this post we'll be using it.
 
 
 # Basics of Wireshark
@@ -15,6 +15,8 @@ The video below covers the this topic pretty nicely, however there are a few thi
 </figure>
 
 <br>
+
+**P.S.-** If you have not seen the video above, watch it else you won't be able to understand anything further. 
 
 ## Monitor Mode
 So for the interesting part, that is capturing network traffic of the devices connected to your network, we need to switch on the monitor mode. So what this mode actually does is use the network card in your laptop/PC to capture all the signals being transmitted, and you can see them in wireshark. But all the data is encrypted and to decrypt the data, we need a couple of things- **the WiFi passphrase** and **the EAPOL Handshake**(I'll be talking about it in a minute). So that's where the problem with **Open WiFi** comes in. The data is **NOT** encrypted!! Unless the site you are visiting uses `HTTPS` for transmission, all the data is visible to the intercepter. Also, the intercepter can view what domains you visit, what apps you open, who is the manufacturer of the device, and  what is your mobile operating system.
