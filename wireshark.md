@@ -45,8 +45,8 @@ If you wish to learn about all these steps in more detail, [read here](https://h
 
 # Conclusion
 All the network traffic around you can be monitored pretty easily, but to decrypt it and actually make sense out of it you need an open network or access to the passphrase. All your information is safe unless the sites you are using do not use `HTTPS` protocol (i.e. they do not have a lock sign on the left of the url). But still, you would not like to enter passwords on sites that have `HTTP` protocol, because the attacker can gain access to that and you might be using the same password on other sites as well. And anyways the sites that you visit will be visible to the attacker irrespective of the protocol being used. 
-
-
+<br>
+I've tried my best to make sure that it is easy to understand the content. But still if you're facing any difficulties or have any suggestions, feel free to ping me!
 
 
 
