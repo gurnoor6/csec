@@ -1,6 +1,6 @@
 # But why is a public wifi unsafe?
 
-You might have heard that sensitive information like credit card credentials, login credentials etc. should not be entered while using public wifi network. But why is it so? Okay, so someone can access the data we enter, but is it practically feasible? If yes, how can we do it? Well, in this post we are going to discuss on how can you analyse the network traffic. 
+You might have heard that sensitive information like credit card details, login credentials etc. should not be entered while using public wifi network. But why is it so? Okay, so someone can access the data we enter, but is it practically feasible? If yes, how can we do it? Well, in this post we are going to discuss on how can you analyse the network traffic. 
 
 # Background
 Okay so let's start with some basics first. There are a lot of devices around us emitting signals, but we'll mainly focus on two of them - the routers and the devices that are used to access the internet such as a smartphone or a laptop. The communication between them follows the **IEEE 802.11** standard. But what does that even mean? So whenever some data is to be transmitted, there has to be a set of rules to which the transmission data adheres, to ensure uniformity. For example, the requests over the **world wide web** follow the `HTTP` protocol in general. In the same way, communications for WiFi networks follow the **IEEE 802.11** standard protocol.<br>
